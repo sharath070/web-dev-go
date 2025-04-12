@@ -13,13 +13,6 @@ func main() {
 	http.ListenAndServe(":8080", nil)
 }
 
-type state int
-
-const (
-	SET state = iota
-	UPDATE
-)
-
 func set(w http.ResponseWriter, r *http.Request) {
 	c, err := r.Cookie("visited")
 	if err == http.ErrNoCookie {
