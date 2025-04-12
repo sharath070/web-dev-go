@@ -23,8 +23,6 @@ func foo(w http.ResponseWriter, r *http.Request) {
 		}
 		defer f.Close()
 
-		io.LimitReader()
-
 		nf, err := os.Create(h.Filename)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
