@@ -26,7 +26,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	li.Close()
+	defer li.Close()
 
 	for {
 		conn, err := li.Accept()
